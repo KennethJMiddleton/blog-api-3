@@ -20,7 +20,7 @@ describe('Blogs', function () {
   it('should list blogs entries on GET', function() {
 
   	return chai.request(app)
-  		.get('/server')
+  		.get('/blog-posts')
   		.then(function (res){
   			res.should.have.status(200);
         	res.should.be.json;
@@ -40,7 +40,7 @@ describe('Blogs', function () {
   	const newItem = {title: 'Blog 4', content: "Happiness is a choice. You can choose to be happy. There's going to be stress in life, but it's your choice whether you let it affect you or not. - Valerie Bertinelli", author: "Keneth Middleton"};
 
   	return chai.request(app)
-  		.post('/server')
+  		.post('/blog-posts')
   		.send(newItem)
   		.then(function(res) {
   			res.should.have.status(201);
@@ -48,7 +48,7 @@ describe('Blogs', function () {
         	res.body.should.be.a('object');
         	res.body.should.include.keys('id', 'title', 'content', 'author', 'publishDate');
         	res.body.id.should.not.be.null;
-        	res.body.should.deep.equal(Object.assign(newItem, {id: res.body.id}));
+        	res.body.should.deep.equal(Object.assign(newItem, {id: res.body.id}, {publishDate: res.body.publishDate}));
       });
 
   });
@@ -58,14 +58,15 @@ describe('Blogs', function () {
   	const updateData = {
   		title: "TEST",
   		content: "THIS IS ONLY A TEST",
+  		author: "Kenneth Middleton"
   	};
 
   	return chai.request(app)
-  		.get('/server')
+  		.get('/blog-posts')
   		.then(function(res) {
   			updateData.id = res.body[0].id;
   			return chai.request(app)
-  				.put(`/server/${updateData.id}`)
+  				.put(`/blog-posts/${updateData.id}`)
   				.send(updateData);
   		})
   		.then(function(res) {
@@ -75,10 +76,10 @@ describe('Blogs', function () {
 
   it("should delete blog entries on DELETE", function() {
   	return chai.request(app)
-  		.get("/server")
+  		.get("/blog-posts")
   		.then(function(res) {
   			return chai.request(app)
-  				.delete(`/server/${res.body[0].id}`);
+  				.delete(`/blog-posts/${res.body[0].id}`);
   		})
   		.then(function(res) {
   			res.should.have.status(204);
