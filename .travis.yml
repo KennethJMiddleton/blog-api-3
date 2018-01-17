@@ -7,3 +7,4 @@ deploy:
   app: still-shore-67254
   on:
     repo: KennethJMiddleton/blog-api-2
+    branch: master
