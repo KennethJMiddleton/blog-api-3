@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: FjcGfJe2CJmfVfOqgC4KVyiewZYbqBpkk8rE6XJnAkA8yA/+oppSlbpIbVobCGbWCWbP0v0aNfjBwcD4bzf6+Z7zc7qvvmmJqAzWiCup2tjHoysF3dZcwLrKm4AdiNX/lrAwehAwnO0oAB3aCwmQ30kx76Pnbbshp1mwX5QwilIGgLdMQrYPnpKK0X+enuZOZk0unEnfsApSGb75+qlK5EixGqX57t/2dWub1Dm3YPv7xWrPAvgwG/UDWNgzEkYU16iunz2OplJuVHpe2nyQytwJtDTOtth/LIS4l67zm1ePeoUCiDYLmrs3V/iTkN6LjwcalKmaMlK4xx7DaI1rcHRzqe5l7cu1AuP36Px3afbX2CtWb3kNe35Vl1CdQvJ8GTl9FKLtSPAghoHUT/6uKwvtsbamitIFigoDt7sy2Q1smxACVik8owV2wqc5m3FH2X7ETbJ28bnaI7mqazVHk/4rTajNyVaQL+TbK+kphUQj/uImVAKH/fWBCXlbx4FWb/jHZb2g+cbTkAyMT0zPrAG6gZY4RNg3OI5FVAa8X4gqj9IkKs4ZQS3UscXDXI9T2+s58n5XilvW5GavWu9IfUurcr5T2dg7lyyz7o0kOVZvqGBGejiI+aelsIzXJ9H/d7PfnVNTZJdi8ULyYyB27LYevRSR6O0e2L7uXwJOUR0=
+  app: still-shore-67254
+  on:
+    repo: KennethJMiddleton/blog-api-2
