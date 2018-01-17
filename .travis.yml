@@ -1,9 +1,2 @@
 language: node_js
 node_js: node
-deploy:
-  provider: heroku
-  api_key:
-    secure: kLVN0Jwh7e4fJBbMrkRCvmB5GP9NbWP2vY7U3n3wyxlfQzvwqchidLcWl/hlYhD8bNvaZi6gsME8lO2JcFlfzNaGGajTe+wGWeotGOdIGd4RDwtZmkAKzlnxVcV6pMvTcCA5YDGcW2lpCwbc9jZ8g5eSBB1X8Cyf2U8rHCPtEG6/VuywaoEcvGz2uXrrydOQ/9G4NSzXAD32swKUwEbcIIMs66AVxOD0Q83p7UQf4JS6+ELiZl3osos1ZQv74HFdvTNfxZOhcsBDNgBF8D4AgNObluRS8qqmm6ObZhYtSeOBUzGggPFzJjbFRL4m+0Zgfp8vTA4l9BdzPvbADpEL/yXOvDR8Hn0cT55Wvq7XGzeUMOyBJJck0FU9xTlhp8HiseBN1a2Iq8zt495boaYLLmbrXW4U8wpcPZZ8X8+9OT/cFEcWxxKLhivtF85R9xg64Vc8hNR330+Y/tQKpFmGiUK9+Z8PFtYwPYoAGUArNGLdBnqI9GN9QdDeDf2TU/Aw6CgAfD+r6pOJmaUuBCwY0p82MVsAu/cVHGmIJ/YYbdsv62pS0XfS2i0Nzd+SzdR7rV12AJ3zC2B2pFCAe2OmL6+8GVarQxi95D5khiE7Y/GleaQxn3OMnkixCJYZJF4Lq8CMKhe7ClF1M+Zgir7/Jy1I2CZHuoMMucTK1Tg4WtU=
-  app: damp-brook-25368
-  on:
-    repo: KennethJMiddleton/blog-api-2
