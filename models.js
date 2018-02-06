@@ -16,7 +16,7 @@ blogSchema.virtual('fullName').get(function() {
   return `${this.firstName} ${this.lastName}`.trim()
 });
 
-restaurantSchema.methods.serialize = function() {
+blogSchema.methods.serialize = function() {
   return {
     id: this._id,
     title: this.title,
@@ -26,6 +26,6 @@ restaurantSchema.methods.serialize = function() {
   };
 }
 
-const Restaurant = mongoose.model('Restaurant', restaurantSchema);
+const BlogPost = mongoose.model('BlogPost', blogSchema);
 
 module.exports = {BlogPost};
