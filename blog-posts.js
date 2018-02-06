@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     });
     BlogPost
         .find(filters)
-        .then(blog => {console.log(blog) res.json(
+        .then(blog => {console.log(blog); res.json(
             blog.map(post => post.serialize())
         )})
         .catch(err => {
