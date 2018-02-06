@@ -13,8 +13,8 @@ router.get('/', (req, res) => {
     });
     BlogPost
         .find(filters)
-        .then(BlogPost => res.json(
-            BlogPost.map(post => post.serialize())
+        .then(blog => res.json(
+            blog.map(post => post.serialize())
         ))
         .catch(err => {
             console.error(err);
