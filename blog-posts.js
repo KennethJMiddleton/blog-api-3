@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {BlogPost} = require('./models');
 
-router.get('/blog-posts', (req, res) => {
+router.get('/', (req, res) => {
     const filters = {};
     const queryableFields = ['title', 'author', 'publishDate'];
     queryableFields.forEach(field => {
@@ -22,7 +22,7 @@ router.get('/blog-posts', (req, res) => {
         });
 });
 
-router.get('/blog-posts/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   BlogPost
     .findById(req.params.id)
     .then(post => res.json(post.serialize()))
@@ -32,7 +32,7 @@ router.get('/blog-posts/:id', (req, res) => {
     });
 });
 
-router.post('/blog-posts', (req, res) => {
+router.post('/', (req, res) => {
   const requiredFields = ['title', 'author', 'content'];
   for (let i = 0; i < requiredFields.length; i++) {
     const field = requiredFields[i];
@@ -57,7 +57,7 @@ router.post('/blog-posts', (req, res) => {
     });
 });
 
-router.put('/blog-posts/:id', (req, res) => {
+router.put('/:id', (req, res) => {
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
     const message = (
       `Request path id (${req.params.id}) and request body id ` +
@@ -83,7 +83,7 @@ router.put('/blog-posts/:id', (req, res) => {
 
 
 
-router.delete('/blog-posts/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   Restaurant
     .findByIdAndRemove(req.params.id)
     .then(post => res.status(204).end())
