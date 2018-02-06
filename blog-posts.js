@@ -13,9 +13,9 @@ router.get('/', (req, res) => {
     });
     BlogPost
         .find(filters)
-        .then(blog => res.json(
+        .then(blog => {console.log(blog) res.json(
             blog.map(post => post.serialize())
-        ))
+        )})
         .catch(err => {
             console.error(err);
             res.status(500).json({message: 'Internal server error'})
